@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10253F"/>
+      <stop offset="100%" stop-color="#0A1829"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1DB5B5"/>
+      <stop offset="100%" stop-color="#168C8C"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="110" fill="url(#bgGrad)"/>
+  <circle cx="256" cy="256" r="190" fill="url(#tealGrad)" stroke="#D5B77A" stroke-width="8"/>
+  <!-- Medical Cross -->
+  <rect x="220" y="140" width="72" height="232" rx="16" fill="#FFFFFF"/>
+  <rect x="140" y="220" width="232" height="72" rx="16" fill="#FFFFFF"/>
+  <!-- Center Heart & Pulse line -->
+  <circle cx="256" cy="256" r="34" fill="#10253F"/>
+  <path d="M236 256 L246 256 L252 242 L260 270 L266 256 L276 256" stroke="#D5B77A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

@@ -1,0 +1,8 @@
+{
+  "name": "Remix Dr. Rakesh Kumar - Pediatric Endocrinology Portfolio",
+  "description": "Premium medical portfolio of Dr. Rakesh Kumar, Pediatric Endocrinologist at PGIMER Chandigarh. Clinical areas of care, parent resources, growth tools, and appointment enquiries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

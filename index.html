@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Gracefully handle harmless Vite HMR WebSocket disconnects in iframe dev environments per AI Studio specifications
+      (function() {
+        var origConsoleError = console.error;
+        console.error = function() {
+          var args = Array.prototype.slice.call(arguments);
+          var text = args.map(function(a) {
+            return (a && typeof a === 'object') ? (a.message || a.stack || '') : String(a);
+          }).join(' ');
+          if (text.indexOf('WebSocket') !== -1 || text.indexOf('closed without opened') !== -1) {
+            return;
+          }
+          origConsoleError.apply(console, args);
+        };
+        window.addEventListener('error', function(e) {
+          if (e.message && (e.message.indexOf('WebSocket') !== -1 || e.message.indexOf('closed without opened') !== -1)) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+          }
+        }, true);
+        window.addEventListener('unhandledrejection', function(e) {
+          var reason = e.reason;
+          var msg = (reason && reason.message) ? reason.message : String(reason);
+          if (msg.indexOf('WebSocket') !== -1 || msg.indexOf('closed without opened') !== -1) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+          }
+        }, true);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#10253F" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Dr Rakesh" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <title>Dr. Rakesh Kumar | Pediatric Endocrinology | PGI Chandigarh</title>
+    <meta name="description" content="Medical portfolio of Dr. Rakesh Kumar, Pediatric Endocrinologist at PGIMER Chandigarh. Expert care for childhood growth, Type 1 diabetes, thyroid, and puberty disorders." />
+    <meta property="og:title" content="Dr. Rakesh Kumar | Pediatric Endocrinology | PGI Chandigarh" />
+    <meta property="og:description" content="Specialist care for children with growth disorders, childhood diabetes, thyroid issues, and hormonal conditions in Chandigarh, India." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Plus Jakarta Sans & Fraunces -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org Medical Doctor & Clinic Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Dr. Rakesh Kumar",
+      "medicalSpecialty": "Pediatric Endocrinology",
+      "description": "Pediatric Endocrinologist providing specialized clinical care for growth disorders, Type 1 diabetes, thyroid disorders, and endocrine conditions in infants, children, and adolescents.",
+      "hospitalAffiliation": {
+        "@type": "Hospital",
+        "name": "Postgraduate Institute of Medical Education and Research (PGIMER)",
+        "alternateName": "PGI Chandigarh",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Advanced Pediatrics Centre (APC), Sector 12",
+          "addressLocality": "Chandigarh",
+          "addressRegion": "Chandigarh",
+          "postalCode": "160012",
+          "addressCountry": "IN"
+        }
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Department of Pediatrics, APC, PGIMER, Sector 12",
+        "addressLocality": "Chandigarh",
+        "addressRegion": "Chandigarh",
+        "postalCode": "160012",
+        "addressCountry": "IN"
+      },
+      "email": "drrakesh.pgi@gmail.com"
+    }
+    </script>
+  </head>
+  <body class="bg-[#FAFCFE] text-[#10253F] antialiased selection:bg-[#168C8C]/20 selection:text-[#10253F]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
